@@ -192,6 +192,9 @@ $bundleAssetPath = '/bundles/digitalwertmonodiclient/';
                                             <li><button class="btn btn-link" ng-click="showDocumentInfo()" ng-show="active">Properties</button></li>
                                             <li class="divider"></li>
                                             <li><button class="open btn btn-link" ng-click="showView('files')">Open</button></li>
+                                            <li class="divider"></li>
+                                            <li><button class="btn btn-link" onclick="importFile()">Import MEI file</button></li>
+                                            <li><button class="btn btn-link" onclick="exportFile()">Export MEI file</button></li>
                                         </ul>
                                     </div>
                                 </li>
@@ -325,12 +328,31 @@ $bundleAssetPath = '/bundles/digitalwertmonodiclient/';
         <script src="/bundles/digitalwertmonodiclient/js/monodi/MonodiDocument.js"></script>
         <script src="/bundles/digitalwertmonodiclient/js/main.js"></script>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.
         <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>-->
+            let fileName = "";
+
+            function exportFile() {
+                const a = document.createElement("a");
+                a.download = fileName;
+                a.href = "data:text/plain;base64," + btoa(monodi.document.getSerializedDocument());
+                a.click();
+            }
+
+            function importFile() {
+                const input = document.createElement("input");
+                input.type = "file";
+                input.addEventListener("change", async () => {
+                    const file = input.files[0];
+                    fileName = file.name;
+                    try {
+                        monodi.document.loadDocument({meiString: await file.text()});
+                    } catch (e) {
+                        console.log(e);
+                        alert("Could not load file as mono:di MEI document\n\n" + e.message);
+                    }
+                });
+                input.click();
+            }
+        </script>
     </body>
 </html>
