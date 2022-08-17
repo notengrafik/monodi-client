@@ -46,6 +46,7 @@ $bundleAssetPath = '';
                 </div>
             </div>
 
+            <!---
             <div class="files container" ng-controller="DocumentListCtrl">
                 <div class="row-fluid">
                     <div class="fileviewToggle btn-group span4 offset8">
@@ -109,7 +110,7 @@ $bundleAssetPath = '';
                     </div>
                 </div>
 
-                <!-- createFolder -->
+                <!-- createFolder -/->
                 <div id="createFolderModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="directoryLabel" aria-hidden="true">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -129,6 +130,7 @@ $bundleAssetPath = '';
                     </form>
                 </div>
             </div>
+            -->
 
             <div class="help help-container container">
                 <iframe src="help/help.xhtml" class="container"></iframe>
@@ -198,13 +200,13 @@ $bundleAssetPath = '';
                                         </ul>
                                     </div>
                                 </li>
-                                <li><button class="filecontrol btn btn-link" ng-click="showView('files')">Management</button></li>
+                                <!--<li><button class="filecontrol btn btn-link" ng-click="showView('files')">Management</button></li>-->
                                 <li class="right version"></li>
                                 <li class="right"><a href="impressum/index.html" target="_blank" class="btn btn-link">Impressum</a></li>
                                 <li class="right"><button class="help btn btn-link" ng-click="showView('help')">Help</button></li>
                                 <li class="right">
                                     <button class="btn btn-link" data-target="#changePassModal" data-toggle="modal" ng-show="access_token">Profil</button>
-                                    <button class="btn btn-link" ng-click="login()" ng-hide="access_token">Login</button>
+                                    <!--<button class="btn btn-link" ng-click="login()" ng-hide="access_token">Login</button>-->
                                 </li>
                             </ul>
                         </div>
