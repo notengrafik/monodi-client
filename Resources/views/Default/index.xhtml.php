@@ -331,7 +331,7 @@ $bundleAssetPath = '';
         <script src="js/main.js"></script>
 
         <script>
-            let fileName = "";
+            let fileName = "untitled.mei";
 
             function exportFile() {
                 const a = document.createElement("a");
