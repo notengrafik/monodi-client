@@ -6,23 +6,23 @@
  * @var Symfony\Bundle\FrameworkBundle\Templating\PhpEngine $view
  * $view['assets'] Symfony\Component\Templating\Helper\CoreAssetsHelper
  */
-$bundleAssetPath = '/bundles/digitalwertmonodiclient/';
+$bundleAssetPath = '';
 ?>
 <?php echo("<?xml version=\"1.0\" ?>\n"); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" encoding="utf-8" manifest="/bundles/digitalwertmonodiclient/cache-manifest/cache.manifest">
+<html xmlns="http://www.w3.org/1999/xhtml" encoding="utf-8" manifest="cache-manifest/cache.manifest">
     <head>
         <title>mono:di</title>
 
-        <link rel="stylesheet" href="/bundles/digitalwertmonodiclient/css/main.css" />
+        <link rel="stylesheet" href="css/main.css" />
 
         <script>
             baseurl = '<?php echo($baseUrl); ?>';
             client_id = '<?php echo($publicId); ?>';
             client_uri = location.href + 'authorized';
         </script>
-        <script src="/bundles/digitalwertmonodiclient/js/monodi.js"></script>
+        <script src="js/monodi.js"></script>
 
         <style type="text/css" id="staticStyle"></style>
         <style type="text/css" id="dynamicStyle"></style>
@@ -74,7 +74,7 @@ $bundleAssetPath = '/bundles/digitalwertmonodiclient/';
                                 </div>
                             </div>
                             <ul>
-                                <li ng-repeat="el in documents" ng-include="'/bundles/digitalwertmonodiclient/js/templates/tree.html'"></li>
+                                <li ng-repeat="el in documents" ng-include="'js/templates/tree.html'"></li>
                             </ul>
                         </div>
 
@@ -131,7 +131,7 @@ $bundleAssetPath = '/bundles/digitalwertmonodiclient/';
             </div>
 
             <div class="help help-container container">
-                <iframe src="/bundles/digitalwertmonodiclient/help/help.xhtml" class="container"></iframe>
+                <iframe src="help/help.xhtml" class="container"></iframe>
             </div>
         </div>
 
@@ -200,7 +200,7 @@ $bundleAssetPath = '/bundles/digitalwertmonodiclient/';
                                 </li>
                                 <li><button class="filecontrol btn btn-link" ng-click="showView('files')">Management</button></li>
                                 <li class="right version"></li>
-                                <li class="right"><a href="/bundles/digitalwertmonodiclient/impressum/index.html" target="_blank" class="btn btn-link">Impressum</a></li>
+                                <li class="right"><a href="impressum/index.html" target="_blank" class="btn btn-link">Impressum</a></li>
                                 <li class="right"><button class="help btn btn-link" ng-click="showView('help')">Help</button></li>
                                 <li class="right">
                                     <button class="btn btn-link" data-target="#changePassModal" data-toggle="modal" ng-show="access_token">Profil</button>
@@ -325,8 +325,8 @@ $bundleAssetPath = '/bundles/digitalwertmonodiclient/';
 
         <div class="loader" ng-show="loading"></div>
 
-        <script src="/bundles/digitalwertmonodiclient/js/monodi/MonodiDocument.js"></script>
-        <script src="/bundles/digitalwertmonodiclient/js/main.js"></script>
+        <script src="js/monodi/MonodiDocument.js"></script>
+        <script src="js/main.js"></script>
 
         <script>
             let fileName = "";

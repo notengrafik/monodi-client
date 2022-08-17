@@ -324,7 +324,7 @@ function AppCtrl($scope, $http) {
             // locally available before we continue initializing mono:di
 
             var request = new XMLHttpRequest();
-            request.open('GET', '/bundles/digitalwertmonodiclient/js/demo.json', false);  // `false` makes the request synchronous
+            request.open('GET', 'js/demo.json', false);  // `false` makes the request synchronous
             request.send(null);
 
             if (request.status === 200) {
@@ -903,7 +903,7 @@ function DocumentListCtrl($scope) {
 	$scope.printBatch = function(ids, documents) {
 		ids = ids || getBatchDocuments();
 		documents = documents || [];
-		
+
 		$scope.getDocument(ids.shift(), function() {
 			documents.push(this.content);
 			if (ids.length > 0) {
@@ -1466,7 +1466,7 @@ function DocumentCtrl($scope, $http) {
 			staticStyleElement	: document.getElementById("staticStyle"),
 			dynamicStyleElement	: document.getElementById("dynamicStyle"),
 			musicContainer		: document.getElementById("musicContainer"),
-			xsltUrl				: "/bundles/digitalwertmonodiclient/js/monodi/mei2xhtml.xsl",
+			xsltUrl				: "js/monodi/mei2xhtml.xsl",
 			meiString			: meiString
 		});
 
