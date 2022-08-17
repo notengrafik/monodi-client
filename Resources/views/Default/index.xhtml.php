@@ -355,6 +355,13 @@ $bundleAssetPath = '';
                 });
                 input.click();
             }
+
+            // This is very quick and dirty and should be done with proper Angular means
+            setTimeout(() => {
+                document.querySelector("#musicContainer").style.display = "";
+                document.querySelector(".main.container").style.display = "block";
+                document.querySelector(".help-container").style.display = "none";
+            }, 200);
         </script>
     </body>
 </html>
