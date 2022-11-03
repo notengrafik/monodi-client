@@ -336,7 +336,12 @@ $bundleAssetPath = '';
             function exportFile() {
                 const a = document.createElement("a");
                 a.download = fileName;
-                a.href = "data:text/plain;base64," + btoa(monodi.document.getSerializedDocument());
+                const xmlString = monodi.document.getSerializedDocument();
+                // btoa() alone apparently only handles a limited set of characters, so follow this:
+                //   https://stackoverflow.com/a/26603875/1728830
+                // unescape() is apparently deprecated, though...
+                const xmlBase64 = btoa(unescape(encodeURIComponent(xmlString)));
+                a.href = "data:text/plain;base64," + xmlBase64;
                 a.click();
             }
 
